@@ -1,13 +1,9 @@
-package de.unidue.ltl.escrito.examples.basicexamples.essay;
-
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import de.unidue.ltl.escrito.examples.basics.Experiments_ImplBase;
 import de.unidue.ltl.escrito.examples.basics.FeatureSettings;
 import de.unidue.ltl.escrito.io.essay.MewsReader;
-import de.unidue.ltl.escrito.io.shortanswer.Asap2Reader;
-import meka.core.F;
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.dkpro.lab.task.Dimension;
@@ -17,14 +13,13 @@ import org.dkpro.tc.core.Constants;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 
-public class WekaClassificationExampleMEWS extends Experiments_ImplBase implements Constants {
+public class WekaClassificationExperiment extends Experiments_ImplBase implements Constants {
 
 	public static void main(String[] args) throws Exception {
 		File trainFile = new File(System.getenv("DKPRO_HOME")+"/datasets/mews/data_ordinal_train.csv");

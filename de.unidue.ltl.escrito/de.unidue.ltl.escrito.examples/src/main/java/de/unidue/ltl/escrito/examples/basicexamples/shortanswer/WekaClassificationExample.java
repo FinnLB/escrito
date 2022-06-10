@@ -25,8 +25,8 @@ public class WekaClassificationExample extends Experiments_ImplBase implements C
 					"en", 
 					2);
 		runAsapBaselineExperiment("ASAP_Train_Test_Example", 
-				System.getenv("DKPRO_HOME")+"/datasets/asap/originalData/train_repaired.txt", 
-				System.getenv("DKPRO_HOME")+"/datasets/asap/originalData/test_public.txt", 
+				System.getenv("DKPRO_HOME")+"/datasets/asap/train.tsv",
+				System.getenv("DKPRO_HOME")+"/datasets/asap/test_public.txt",
 				"en", 
 				1);
 	}

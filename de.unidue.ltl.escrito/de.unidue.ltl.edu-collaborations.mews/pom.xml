@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>de.unidue.ltl.escrito</artifactId>
+        <groupId>de.unidue.ltl.escrito</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.unidue.ltl.edu-collaborations</groupId>
+    <artifactId>de.unidue.ltl.edu-collaborations.mews</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>ltl-model</id>
+            <url>http://basa.ltl.uni-due.de:34001/artifactory/models</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>ltl-snapshots</id>
+            <url>http://basa.ltl.uni-due.de:34001/artifactory/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>ltl-releases</id>
+            <url>http://basa.ltl.uni-due.de:34001/artifactory/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>ukp-oss-snapshots</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots/</url>
+        </repository>
+
+        <repository>
+            <id>ukp-oss-model-releases</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.unidue.ltl.escrito</groupId>
+            <artifactId>de.unidue.ltl.escrito.core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.unidue.ltl.escrito</groupId>
+            <artifactId>de.unidue.ltl.escrito.io</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.unidue.ltl.escrito</groupId>
+            <artifactId>de.unidue.ltl.escrito.features</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.unidue.ltl.escrito</groupId>
+            <artifactId>de.unidue.ltl.escrito.examples</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <version>1.10.0</version>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
+        </dependency>
+        <!-- Spring dependencies -->
+        <!-- <dependency> -->
+        <!-- <groupId>org.springframework.security</groupId> -->
+        <!-- <artifactId>spring-security-config</artifactId> -->
+        <!-- <version>3.2.5.RELEASE</version> -->
+        <!-- </dependency> -->
+        <!-- UIMA RUTA dependencies -->
+        <dependency>
+            <groupId>org.apache.uima</groupId>
+            <artifactId>ruta-core</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.uima</groupId>
+            <artifactId>uimafit-core</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dkpro.tc</groupId>
+            <artifactId>dkpro-tc-features-ngram</artifactId>
+        </dependency>
+        <!-- 		<dependency> -->
+        <!-- 			<groupId>org.dkpro.tc</groupId> -->
+        <!-- 			<artifactId>dkpro-tc-examples</artifactId> -->
+        <!-- 			<version>1.1.0-SNAPSHOT</version> -->
+        <!-- 		</dependency> -->
+
+        <dependency>
+            <groupId>org.dkpro.tc</groupId>
+            <artifactId>dkpro-tc-features</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dkpro.tc</groupId>
+            <artifactId>dkpro-tc-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-asl
+            </artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.matetools-gpl
+            </artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.io.xmi-asl</artifactId>
+        </dependency>
+        <!-- <dependency> -->
+        <!-- <groupId>de.tudarmstadt.ukp.dkpro.core</groupId> -->
+        <!-- <artifactId>de.tudarmstadt.ukp.dkpro.core.languagetool-asl</artifactId> -->
+        <!-- </dependency> -->
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-parser-en-pcfg</artifactId>
+            <version>20120709.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-parser-de-pcfg</artifactId>
+            <version>20150129.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-model-sentence-de-maxent</artifactId>
+            <version>20120616.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-model-token-de-maxent</artifactId>
+            <version>20120616.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.matetools-model-parser-de-tiger</artifactId>
+            <version>20121024.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.matetools-model-lemmatizer-de-tiger</artifactId>
+            <version>20121024.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>
+                de.tudarmstadt.ukp.dkpro.core.clearnlp-asl
+            </artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>
+                de.tudarmstadt.ukp.dkpro.core.clearnlp-model-parser-en-ontonotes
+            </artifactId>
+            <version>20131128.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>
+                de.tudarmstadt.ukp.dkpro.core.clearnlp-model-tagger-en-ontonotes
+            </artifactId>
+            <version>20131128.0</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.corenlp-model-depparser-de-ud
+            </artifactId>
+            <version>20161213.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.clearnlp</groupId>
+            <artifactId>clearnlp-dictionary</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>weka-dev</artifactId>
+            <version>3.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.berkeleyparser-model-parser-de-sm5</artifactId>
+            <version>20090917.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.5.2</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers> <!-- Set the main class of the executable JAR -->
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>de.unidue.ltl.edu_collaborations.mews.BasicExperiment</mainClass>
+                                </transformer> <!-- Merge the uimaFIT configuration files -->
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource> META-INF/org.apache.uima.fit/fsindexes.txt </resource>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource> META-INF/org.apache.uima.fit/types.txt </resource>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource> META-INF/org.apache.uima.fit/typepriorities.txt </resource>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource> META-INF/lab/engines.properties </resource>
+                                </transformer>
+
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource>META-INF/spring.handlers</resource>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource>META-INF/spring.schemas</resource>
+                                </transformer>
+
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
+                                    <resource> META-INF/spring/activemq-broker.xml </resource>
+                                </transformer> <!-- Prevent huge shaded artifacts from being deployed to a Maven repository
+									(remove if not desired) -->
+                            </transformers>
+                            <outputFile>
+                                ${project.build.directory}/${project.artifactId}-${project.version}-standalone.jar
+                            </outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+
+            </plugin>
+        </plugins>
+    </build>
+</project>
