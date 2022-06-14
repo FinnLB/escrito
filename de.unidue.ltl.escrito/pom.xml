@@ -87,16 +87,6 @@
             </artifactId>
 				<version>2.0.0</version>
 			</dependency>
-			<dependency>
-				<groupId>org.apache.uima</groupId>
-				<artifactId>ruta-core</artifactId>
-				<version>2.0.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.uima</groupId>
-				<artifactId>uimafit-core</artifactId>
-				<version>2.2.0</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<modules>
@@ -107,6 +97,7 @@
 		<module>de.unidue.ltl.escrito.features</module>
 		<module>de.unidue.ltl.escrito.languagetool</module>
 		<!--module>de.unidue.ltl.escrito.integration.jack</module-->
+		<module>de.unidue.ltl.edu-collaborations.mews</module>
 	</modules>
 	<build>
 		<plugins>
@@ -118,63 +109,6 @@
 					<!-- Exclude UIMA types and internal API -->
 					<excludePackageNames>*.type:*.internal.*:*.exception</excludePackageNames>
 				</configuration>
-			</plugin>
-			<plugin>
-
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.3</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<transformers> <!-- Set the main class of the executable JAR -->
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>WekaClassificationExperiment</mainClass>
-								</transformer> <!-- Merge the uimaFIT configuration files -->
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource> META-INF/org.apache.uima.fit/fsindexes.txt </resource>
-								</transformer>
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource> META-INF/org.apache.uima.fit/types.txt </resource>
-								</transformer>
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource> META-INF/org.apache.uima.fit/typepriorities.txt </resource>
-								</transformer>
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource> META-INF/lab/engines.properties </resource>
-								</transformer>
-
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource>META-INF/spring.handlers</resource>
-								</transformer>
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource>META-INF/spring.schemas</resource>
-								</transformer>
-
-								<transformer
-										implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
-									<resource> META-INF/spring/activemq-broker.xml </resource>
-								</transformer> <!-- Prevent huge shaded artifacts from being deployed to a Maven repository
-									(remove if not desired) -->
-							</transformers>
-							<outputFile>
-								${project.build.directory}/${project.artifactId}-${project.version}-standalone.jar
-							</outputFile>
-						</configuration>
-					</execution>
-				</executions>
-
 			</plugin>
 		</plugins>
 	</build>
